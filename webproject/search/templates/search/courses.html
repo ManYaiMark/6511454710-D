@@ -1,0 +1,11 @@
+<h1>Courses</h1>
+{% csrf_token %}
+<ul>
+  {% for course in courses %}
+  <li>
+    <a href="{% url 'edit' pk=course.Course_id %}">Update</a>
+    {{ course.Course_id }} - {{ course.Course_name }} -{{ course.Teacher_name }}
+    <a href="{% url 'delete' pk=course.Course_id %}">Delete</a>
+  </li>
+  {% endfor %}
+</ul>
